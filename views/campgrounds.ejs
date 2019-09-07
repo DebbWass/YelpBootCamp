@@ -1,0 +1,16 @@
+<% include partials/header%>
+<h1>
+	campgrounds
+</h1>
+<a href = "/campgrounds/new">Add New Campground</a>
+<% campgrounds.forEach(function(campground){%>
+<div>
+	<h6>
+		<%= campground.name %>
+	</h6>
+	<img src="<%= campground.image %>" >
+</div>
+<%})%>
+</table>
+<a href="/">Home</a>
+<% include partials/footer%>

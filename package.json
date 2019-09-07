@@ -1,0 +1,24 @@
+{
+  "name": "yelpcamp_v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Debbwass:Dd061018008!@github.com/DebbWass/YelpBootCamp.git"
+  },
+  "author": "Debra Wass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DebbWass/YelpBootCamp/issues"
+  },
+  "homepage": "https://github.com/DebbWass/YelpBootCamp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
