@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<header class = "jumbotron">
+	<div class ="container">
+		<h1>
+			Creat New Comment to <%= campground.name%>
+		</h1>
+
+		<form action = "/campgrounds/<%=campground._id%>/comments" method = "POST">
+			<input class = "form-control" type = "text" name = "comment[text]" placeholder = "text">
+			<input class = "form-control" type = "text" name = "comment[author]" placeholder = "author">
+			<button class = "btn btn-lg btn-default">Submit</button>
+		</form>
+		<a href = "/campgrounds">Go Back</a>
+	</div>
+</header>
+<% include ../partials/footer %>
