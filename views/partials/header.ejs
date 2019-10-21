@@ -15,9 +15,15 @@
     			</div>
 				<div class = "collaps navbar-collaps">
 		 			<ul class = "nav navbar-nav navbar-right">
-						<li><a href = "/">Login</a></li> 
-						<li><a href = "/">Sign up</a></li>
-						<li><a href = "/">Logout</a></li>
+						<%if(!currentUser){%>
+							<li><a href = "/login">Login</a></li> 
+							<li><a href = "/register">Sign up</a></li>
+						<%}else{%>
+							<li><a><%= currentUser.username%></a></li>
+							<li><a href = "/logout">Logout</a></li>
+						<%}%>
+						
+						
 					</ul>
 				</div>
  			</div><!-- /.container-fluid -->
