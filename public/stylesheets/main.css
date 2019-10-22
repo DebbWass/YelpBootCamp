@@ -12,3 +12,6 @@
 #new{
 	width: 500px;
 }
+#deleteBtn{
+	display: inline;
+}
