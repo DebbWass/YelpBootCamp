@@ -2,14 +2,27 @@
 
 <h1>Notifications</h1>
 
-<ul>
+<table class="table table-striped">
+	<!-- <ul> -->
 	<% allNotifications.forEach(function(notification) { %>
-	<li>
-		<a href="/campgrounds/<%= notification.campgroundId %>">
-			<%= notification.username %> created a new campground %>
-		</a>
-	</li>
+		<tr>
+
+			<!-- <li> -->
+			<td>
+				<a  href="/campgrounds/<%= notification.campgroundId %>">
+					<%= notification.username %> created a new campground %>
+				</a>
+			</td>
+			<td>
+				<p style = "display: inline;">
+					<em><%= moment(notification.createdAt).fromNow() %></em>
+				</p>
+			</td>
+			<!-- </li> -->
+
+		<!-- </ul> -->
+		</tr>	
 	<% }); %>
-</ul>
+</table>
 
 <% include ../partials/footer %> 

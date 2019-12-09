@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<div class="row">
+    <h1 style="text-align: center">Edit <%= user.username %></h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/users/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <input class="form-control" type="text" name="user[username]" value= "<%= user.username%>">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="user[password]" value= "<%= user.password%>">
+            </div>
+			<div class="form-group">
+                <input class="form-control" type="text" name="user[firstName]" value= "<%= user.firstName%>">
+            </div>
+			<div class="form-group">
+                <input class="form-control" type="text" name="user[lastName]" value= "<%= user.lastName%>">
+            </div>
+			<div class="form-group">
+                <input class="form-control" type="text" name="user[email]" value= "<%= user.email%>">
+            </div>
+			<!-- <div class="form-group">
+                <input class="form-control" type="text" name="avatar" placeholder="Avater URL">
+            </div> -->
+			<div class="form-group">
+                <label for="avatar">avatar</label>
+                <input type="file" id="avatar" name="avatar" accept="avatar/*">
+            </div>
+			<div class="form-group">
+                <label for="avatar">About Me</label>
+				<textarea rows="4" cols="46" name="user[aboutMe]"><%= user.aboutMe%> </textarea>
+            </div>
+			
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Save Changes</button>
+            </div>
+        </form>
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>
