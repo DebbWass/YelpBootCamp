@@ -20,7 +20,14 @@ var indexRoutes		 = require("./routes/index");
 var usersRoutes		 = require("./routes/users");
 var reviewRoutes     = require("./routes/reviews");
 //mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
-mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true , useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/yelp_camp', {useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect(process.env.DBURL, {useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true}).then(() => {
+	console.log("Connected");
+}).catch(err => {
+	console.log("ERROR:", err.message);
+});
+
+//process.env.DBURL
 mongoose.set('useFindAndModify', false);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
